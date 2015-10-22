@@ -1,0 +1,22 @@
+<div class="content-wrapper" style="background-color: transparent">
+
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="btn-group">
+            <button type="button" class="btn btn-warning btn-flat">Create New Task</button>
+            <a type="button"  class="btn btn-warning btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
+            <ul class="dropdown-menu">
+                <li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask">{{tasktype.name}}</a><li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+</div>
