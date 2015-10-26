@@ -1,0 +1,83 @@
+<div class="content container">
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{taskType}}</h3>
+        </div>
+        <div class="box-body">
+            <form role="form">
+                <!-- text input -->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                    <label>URL</label>
+                    <input type="url" class="form-control" placeholder="http://example.com/">
+                </div>
+                <div class="form-group">
+                    <!--<label>Type </label>-->
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default ">
+                            <input type="radio" ng-model="formData.method"
+                                   value="GET">
+                            GET
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" ng-model="formData.method"
+                                   value="POST">
+                            POST
+                        </label>
+                    </div>
+                </div>
+
+                <!-- textarea -->
+                <div class="form-group" ng-show="formData.method == 'POST'">
+                    <label>Payload</label>
+                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Header</label>
+                    <div class="control ng-scope" ng-repeat="header in formData.headers" style="margin-bottom: 10px">
+                        <!-- ngRepeat: (key,value) in header --><div class="row ng-scope" ng-repeat="(key,value) in header">
+                        <div class="col-md-5">
+                            <input ng-model="key" type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="Header">
+                        </div>
+                        <div class="col-md-5">
+                            <input ng-model="value" type="text" class="form-control col-md-6 ng-pristine ng-untouched ng-valid" placeholder="Value...">
+                        </div>
+                        <button ng-click="removeHeader($index)">×</button>
+                    </div><!-- end ngRepeat: (key,value) in header -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-info" ng-click="addHeader()">
+                                Add Header
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Parameter</label>
+                    <div class="control ng-scope" ng-repeat="param in formData.params" style="margin-bottom: 10px">
+                        <!-- ngRepeat: (key,value) in header --><div class="row ng-scope" ng-repeat="(key,value) in param">
+                        <div class="col-md-5">
+                            <input ng-model="key" type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="Key">
+                        </div>
+                        <div class="col-md-5">
+                            <input ng-model="value" type="text" class="form-control col-md-6 ng-pristine ng-untouched ng-valid" placeholder="Value...">
+                        </div>
+                        <button ng-click="removeParam($index)">×</button>
+                    </div><!-- end ngRepeat: (key,value) in header -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-info" ng-click="addParam()">
+                                Add Param
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

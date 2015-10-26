@@ -23,14 +23,14 @@
     <link rel="stylesheet" href="AdminLTE-2.3.0/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
-    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.js">
     <!-- endbuild -->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -93,12 +93,12 @@
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
                 <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <li class="dropdown notifications-menu" dropdown>
+                    <a href="#" class="dropdown-toggle" aria-expanded="false" dropdown-toggle>
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-danger">3</span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" >
                         <li class="header">You have 3 notifications</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
@@ -125,8 +125,8 @@
                 </li>
                 <!-- Tasks: style can be found in dropdown.less -->
                 <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <li class="dropdown user user-menu" dropdown>
+                    <a href="#" class="dropdown-toggle" dropdown-toggle>
                         <img src="images/photo.jpg" class="user-image" alt="User Image">
                         <span class="hidden-xs">Rishi Saraf</span>
                     </a>

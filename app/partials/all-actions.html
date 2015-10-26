@@ -8,12 +8,13 @@
     </section>
 
     <section class="content">
-        <div class="row" style="margin-bottom: 60px; margin-left: 10px">
-            <div class="btn-group">
+        <div class="row " style="margin-bottom: 60px; margin-left: 10px">
+            <div class="btn-group dropdown" dropdown>
             <button type="button" class="btn btn-warning btn-flat">Create New Task</button>
-            <a type="button"  class="btn btn-warning btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
+            <a  href="" type="button"  class="btn btn-warning btn-flat dropdown-toggle" dropdown-toggle aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
             <ul class="dropdown-menu">
-                <li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask({ taskType: tasktype.name })">{{tasktype.name}}</a><li>
+                <!--<li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask({ taskType: tasktype.name })">{{tasktype.name}}</a><li>-->
+                <li ng-repeat="tasktype in tasktypes"><a ng-click="setPage(tasktype.name)">{{tasktype.name}}</a><li>
             </ul>
         </div>
         </div>

@@ -27,13 +27,29 @@ angular
                 templateUrl: "partials/all-actions.html",
                 controller: 'DashboardCtrl'
             })
-            .state('newTask', {
-                url: "/newTask/:taskType",
-                templateUrl: "partials/new-task.html",
-                controller: 'NewTaskCtrl'
+            .state('RestForm', {
+                url: "/new/:taskType",
+                templateUrl: "partials/rest-task.html",
+                controller: 'RestTaskCtrl'
+            })
+            .state('CommandForm', {
+                url: "/new/:taskType",
+                templateUrl: "partials/rest-task.html",
+                controller: 'RestTaskCtrl'
+            })
+            .state('EmailForm', {
+                url: "/new/:taskType",
+                templateUrl: "partials/rest-task.html",
+                controller: 'RestTaskCtrl'
+            })
+            .state('TorrentForm', {
+                url: "/new/:taskType",
+                templateUrl: "partials/rest-task.html",
+                controller: 'RestTaskCtrl'
             });
-
-
+    }])
+    .run(['$state', function ($state) {
+        $state.transitionTo('home');
     }]);
 
 
