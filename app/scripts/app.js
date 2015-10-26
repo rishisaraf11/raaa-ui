@@ -15,6 +15,8 @@ angular
         'ui.bootstrap',
         'ui.router',
         'chart.js',
+        'ui.bootstrap.datetimepicker',
+        'angular-cron-jobs',
         'angular-loading-bar'
     ])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
@@ -30,26 +32,27 @@ angular
             .state('RestForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
-                controller: 'RestTaskCtrl'
+                controller: 'NewTaskCtrl'
             })
             .state('CommandForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
-                controller: 'RestTaskCtrl'
+                controller: 'NewTaskCtrl'
             })
             .state('EmailForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
-                controller: 'RestTaskCtrl'
+                controller: 'NewTaskCtrl'
             })
             .state('TorrentForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
-                controller: 'RestTaskCtrl'
+                controller: 'NewTaskCtrl'
             });
     }])
-    .run(['$state', function ($state) {
+    .run(['$state', '$rootScope', function ($state, $rootScope) {
         $state.transitionTo('home');
+        $rootScope.cronInitData = "* * * * *";
     }]);
 
 

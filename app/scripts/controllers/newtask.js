@@ -6,20 +6,35 @@
  * # MainCtrl
  * Controller of the sbAdminApp
  */
-angular.module('raaa-ui')
-    .controller('NewTaskCtrl', function($scope, $stateParams) {
-        $scope.taskType = $stateParams.taskType;
-        $scope.addTask = function () {
-
-        }
-    });
-
 
 angular.module('raaa-ui')
-    .controller('RestTaskCtrl', function($scope, $stateParams) {
+    .controller('NewTaskCtrl', function($scope, $stateParams, $state) {
+        $scope.cronTagConfig = {
+            options: {
+                allowWeek : true,
+                allowMonth : true,
+                allowYear : true
+            }
+        };
+        $scope.dateTimeNow = function() {
+            $scope.date = new Date();
+        };
+        $scope.hourStep = 1;
+        $scope.minuteStep = 15;
+
+        $scope.maxDate = new Date('2020-06-22');
+
+        $scope.dateOptions = {
+            startingDay: 1,
+            showWeeks: false
+        };
+
         $scope.taskType = $stateParams.taskType;
         $scope.formData = {
+            type: $scope.taskType,
             method: 'GET',
+            expressionType: 'cron',
+            expression: '',
             headers: [],
             params:[]
         };
@@ -39,4 +54,12 @@ angular.module('raaa-ui')
         $scope.removeParam = function(index){
             $scope.formData.params.splice(index, 1);
         };
+
+        $scope.cancel = function () {
+            $state.transitionTo('home');
+        }
+
+        $scope.submit = function () {
+            console.log($scope.formData);
+        }
     });

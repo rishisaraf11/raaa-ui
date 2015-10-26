@@ -14,8 +14,9 @@
 
     <!-- build:css(.tmp) styles/main.css -->
     <!--<link rel="stylesheet" href="styles/main.css">-->
-    <!--<link rel="stylesheet" href="styles/app.css">-->
+    <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/timeline.css">
+    <link rel="stylesheet" href="styles/datetimepicker.css">
     <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
@@ -23,7 +24,8 @@
     <link rel="stylesheet" href="AdminLTE-2.3.0/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
-    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.js">
+    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.css">
+    <link rel="stylesheet" href="bower_components/angular-cron-jobs/dist/angular-cron-jobs.css">
     <!-- endbuild -->
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -41,10 +43,12 @@
     <script src="bower_components/Chart.js/Chart.min.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+    <script src="bower_components/angular-cron-jobs/dist/angular-cron-jobs.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/directives/datetimepicker.js"></script>
     <script src="scripts/app.js"></script>
     <script src="js/jquery-app.js"></script>
     <!-- endbuild -->
