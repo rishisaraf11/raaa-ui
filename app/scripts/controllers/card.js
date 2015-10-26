@@ -9,9 +9,9 @@
 angular.module('raaa-ui')
     .controller('CardCtrl', function($scope) {
         $scope.tasks = [
-            {name:'Pipeline',lastexecution:'Success',  data: [500, 300]},
-            {name:'Log Cleanup',lastexecution:'Failure',  data: [4, 5]},
-            {name:'Email',lastexecution:'Success', data: [10, 1]}
+            {name:'Pipeline',lastexecution:'Success',  data: [500, 300], status: 'on'},
+            {name:'Log Cleanup',lastexecution:'Failure',  data: [4, 5], status: 'on'},
+            {name:'Email',lastexecution:'', data: [10, 1], status: 'on'}
         ];
 
         $scope.labels = ["Success", "Failure"];

@@ -15,6 +15,7 @@ angular
         'ui.bootstrap',
         'ui.router',
         'chart.js',
+        'uiSwitch',
         'ui.bootstrap.datetimepicker',
         'angular-cron-jobs',
         'angular-loading-bar'

@@ -45,14 +45,14 @@
                     <div class="control ng-scope" ng-repeat="header in formData.headers"
                          style="margin-bottom: 10px">
                         <!-- ngRepeat: (key,value) in header -->
-                        <div class="row ng-scope" ng-repeat="(key,value) in header">
+                        <div class="row ng-scope">
                             <div class="col-md-5">
-                                <input ng-model="key" type="text"
+                                <input ng-model="header.key" type="text"
                                        class="form-control ng-pristine ng-valid ng-touched"
                                        placeholder="Header">
                             </div>
                             <div class="col-md-5">
-                                <input ng-model="value" type="text"
+                                <input ng-model="header.value" type="text"
                                        class="form-control col-md-6 ng-pristine ng-untouched ng-valid"
                                        placeholder="Value...">
                             </div>
@@ -74,14 +74,14 @@
                     <div class="control ng-scope" ng-repeat="param in formData.params"
                          style="margin-bottom: 10px">
                         <!-- ngRepeat: (key,value) in header -->
-                        <div class="row ng-scope" ng-repeat="(key,value) in param">
+                        <div class="row ng-scope">
                             <div class="col-md-5">
-                                <input ng-model="key" type="text"
+                                <input ng-model="param.key" type="text"
                                        class="form-control ng-pristine ng-valid ng-touched"
                                        placeholder="Key">
                             </div>
                             <div class="col-md-5">
-                                <input ng-model="value" type="text"
+                                <input ng-model="param.value" type="text"
                                        class="form-control col-md-6 ng-pristine ng-untouched ng-valid"
                                        placeholder="Value...">
                             </div>

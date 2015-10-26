@@ -40,7 +40,7 @@ angular.module('raaa-ui')
         };
 
         $scope.addHeader = function(){
-            $scope.formData.headers.push({'header':'value'});
+            $scope.formData.headers.push({'key':'header-name', 'value':'value'});
         };
 
         $scope.removeHeader = function(index){
@@ -48,7 +48,7 @@ angular.module('raaa-ui')
         };
 
         $scope.addParam = function(){
-            $scope.formData.params.push({'parameter':'value'});
+            $scope.formData.params.push({'key':'param-name', 'value':'value'});
         };
 
         $scope.removeParam = function(index){
@@ -60,6 +60,6 @@ angular.module('raaa-ui')
         }
 
         $scope.submit = function () {
-            console.log($scope.formData);
+            console.log(JSON.stringify($scope.formData));
         }
     });
