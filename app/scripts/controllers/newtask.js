@@ -7,8 +7,8 @@
  * Controller of the sbAdminApp
  */
 angular.module('raaa-ui')
-    .controller('NewTaskCtrl', function($scope) {
-        $scope.taskName = 'Rest Task';
+    .controller('NewTaskCtrl', function($scope, $stateParams) {
+        $scope.taskType = $stateParams.taskType;
         $scope.addTask = function () {
 
         }

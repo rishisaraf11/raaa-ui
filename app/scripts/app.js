@@ -14,7 +14,8 @@ angular
         'ui.router',
         'ui.bootstrap',
         'ui.router',
-        'angular-loading-bar',
+        'chart.js',
+        'angular-loading-bar'
     ])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
@@ -27,7 +28,7 @@ angular
                 controller: 'DashboardCtrl'
             })
             .state('newTask', {
-                url: "/newTask",
+                url: "/newTask/:taskType",
                 templateUrl: "partials/new-task.html",
                 controller: 'NewTaskCtrl'
             });

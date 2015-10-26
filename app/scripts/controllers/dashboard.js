@@ -8,5 +8,5 @@
  */
 angular.module('raaa-ui')
   .controller('DashboardCtrl', function($scope) {
-        $scope.tasktypes = [{"name": "Rest"}, {"name": "Command"}]
+        $scope.tasktypes = [{"name": "Rest"}, {"name": "Command"}, {"name": "Email"}]
   });
