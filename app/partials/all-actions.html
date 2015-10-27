@@ -1,12 +1,4 @@
 <div>
-
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
-    </section>
-
     <section class="content">
         <div class="row " style="margin-bottom: 60px; margin-left: 10px">
             <div class="btn-group dropdown" dropdown>
@@ -24,8 +16,8 @@
             <div class="taskgroup">
                 <div ng-repeat="task in tasks" ng-class="task.type" class="animated bounceInDown">
                     <div class="col-md-4">
-                        <div class="box  "
-                             ng-class="{'box-info': task.lastexecution == 'Success', 'box-danger': task.lastexecution == 'Failure', 'box-default': task.lastexecution == ''}">
+                        <div class="box"
+                             ng-class="{'box-success': task.lastExecutionStatus == 'EXECUTED', 'box-danger': task.lastExecutionStatus == 'FAILED', 'box-default': task.lastExecutionStatus == 'NOT_SCHEDULED', 'box-default': task.lastExecutionStatus == 'NOT_SCHEDULED'}">
                             <div class="box-header with-border">
                                 <h3 class="box-title"><a href="" ng-click="setDetailPage(task.type)">{{task.name}}</a>
                                 </h3>

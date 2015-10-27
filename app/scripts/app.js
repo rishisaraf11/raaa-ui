@@ -18,6 +18,7 @@ angular
         'uiSwitch',
         'ui.bootstrap.datetimepicker',
         'angular-cron-jobs',
+        'ncy-angular-breadcrumb',
         'angular-loading-bar'
     ])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
@@ -29,6 +30,9 @@ angular
                 url: "/home",
                 templateUrl: "partials/all-actions.html",
                 controller: 'DashboardCtrl',
+                ncyBreadcrumb: {
+                    label: 'DashBoard'
+                },
                 resolve: {
                     tasks: function ($http) {
                         return $http.get('http://127.0.0.1/api/task');
@@ -38,7 +42,10 @@ angular
             .state('RestForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
-                controller: 'NewTaskCtrl'
+                controller: 'NewTaskCtrl',
+                ncyBreadcrumb: {
+                    label: 'Rest Task'
+                }
             })
             .state('CommandForm', {
                 url: "/new/:taskType",
