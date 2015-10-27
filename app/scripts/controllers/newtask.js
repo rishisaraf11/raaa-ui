@@ -8,7 +8,7 @@
  */
 
 angular.module('raaa-ui')
-    .controller('NewTaskCtrl', function($scope, $stateParams, $state) {
+    .controller('NewTaskCtrl', function($scope, $stateParams, $state, $http, $rootScope) {
         $scope.cronTagConfig = {
             options: {
                 allowWeek : true,
@@ -31,7 +31,7 @@ angular.module('raaa-ui')
 
         $scope.taskType = $stateParams.taskType;
         $scope.formData = {
-            type: $scope.taskType,
+            type: ($scope.taskType).toUpperCase(),
             method: 'GET',
             expressionType: 'cron',
             expression: '',
@@ -60,6 +60,13 @@ angular.module('raaa-ui')
         }
 
         $scope.submit = function () {
-            console.log(JSON.stringify($scope.formData));
+            $http.post($rootScope.baseUrl + 'task', $scope.formData).success(function(response, status, headers, config){
+                //process success scenario.
+                console.log("Response: " + response);
+                }).error(function(err, status, headers, config){
+                //process error scenario.
+                console.log("Error: " + err);
+            });
+
         }
     });

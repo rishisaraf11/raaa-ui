@@ -10,56 +10,72 @@
     <section class="content">
         <div class="row " style="margin-bottom: 60px; margin-left: 10px">
             <div class="btn-group dropdown" dropdown>
-            <button type="button" class="btn btn-warning btn-flat">Create New Task</button>
-            <a  href="" type="button"  class="btn btn-warning btn-flat dropdown-toggle" dropdown-toggle aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
-            <ul class="dropdown-menu">
-                <!--<li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask({ taskType: tasktype.name })">{{tasktype.name}}</a><li>-->
-                <li ng-repeat="tasktype in tasktypes"><a ng-click="setPage(tasktype.name)">{{tasktype.name}}</a><li>
-            </ul>
-        </div>
+                <button type="button" class="btn btn-warning btn-flat">Create New Task</button>
+                <a href="" type="button" class="btn btn-warning btn-flat dropdown-toggle"
+                   dropdown-toggle aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                    <!--<li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask({ taskType: tasktype.name })">{{tasktype.name}}</a><li>-->
+                    <li ng-repeat="tasktype in tasktypes"><a ng-click="setPage(tasktype.name)">{{tasktype.name}}</a>
+                    <li>
+                </ul>
+            </div>
         </div>
         <div class="container">
-                <div ng-controller="CardCtrl" class="taskgroup">
-                    <div ng-repeat="task in tasks" ng-class="task.type" class="animated bounceInDown">
-                        <div class="col-md-4">
-                            <div class="box  " ng-class="{'box-info': task.lastexecution == 'Success', 'box-danger': task.lastexecution == 'Failure', 'box-default': task.lastexecution == ''}">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">{{task.name}}</h3>
+            <div ng-controller="CardCtrl" class="taskgroup">
+                <div ng-repeat="task in tasks" ng-class="task.type" class="animated bounceInDown">
 
-                                    <div class="box-tools pull-right">
-                                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
-                                        <!--</button>-->
-                                        <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
-                                    </div>
-                                    <div class="box-body">
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="chart-responsive">
-                                                    <canvas id="doughnut" class="chart chart-doughnut"
-                                                            chart-data="task.data" chart-labels="labels" chart-colours="colors">
-                                                    </canvas>
-                                                </div>
-                                                <!-- ./chart-responsive -->
+
+                    <div class="col-md-4">
+
+                        <div class="box  "
+                             ng-class="{'box-info': task.lastexecution == 'Success', 'box-danger': task.lastexecution == 'Failure', 'box-default': task.lastexecution == ''}">
+                            <div class="box-header with-border">
+                                <h3 class="box-title"><a href="" ng-click="setPage(task.type)">{{task.name}}</a>
+                                </h3>
+
+                                <div class="box-tools pull-right">
+                                    <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
+                                    <!--</button>-->
+                                    <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="chart-responsive">
+                                                <canvas id="doughnut" class="chart chart-doughnut"
+                                                        chart-data="task.data" chart-labels="labels"
+                                                        chart-colours="colors">
+                                                </canvas>
                                             </div>
-                                            <!-- /.col -->
-                                            <div class="col-md-5">
-                                                <ul class="chart-legend clearfix">
-                                                    <li><strong>Type:</strong> Rest</li>
-                                                    <li><strong>Last Execution:</strong> Rest</li>
-                                                    <li><strong>Type:</strong> Rest</li>
-                                                </ul>
-                                                <div style="margin-top: 10px"><switch name="onOff" ng-model="task.status" on="on" off="off"></switch></div>
-                                            </div>
-                                            <!-- /.col -->
+                                            <!-- ./chart-responsive -->
                                         </div>
-                                        <!-- /.row -->
+                                        <!-- /.col -->
+                                        <div class="col-md-6">
+                                            <div><strong>Type:</strong> Rest</div>
+                                            <div><strong>Total Run:</strong> 100</div>
+                                            <div><strong>Last Run:</strong></div>
+                                            <!--<ul>-->
+                                            <!--<li><strong>Type:</strong> Rest</li>-->
+                                            <!--<li><strong>Last Execution:</strong> Rest</li>-->
+                                            <!--<li><strong>Type:</strong> Rest</li>-->
+                                            <!--</ul>-->
+                                            <div style="margin-top: 10px">
+                                                <switch name="onOff" ng-model="task.status" on="on"
+                                                        off="off"></switch>
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
                                     </div>
+                                    <!-- /.row -->
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
+        </div>
     </section>
 
 </div>

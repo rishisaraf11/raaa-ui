@@ -49,11 +49,16 @@ angular
                 url: "/new/:taskType",
                 templateUrl: "partials/rest-task.html",
                 controller: 'NewTaskCtrl'
+            }).state('restDetail', {
+                url: "/detail/:taskType",
+                templateUrl: "partials/rest-task.html",
+                controller: 'NewTaskCtrl'
             });
     }])
     .run(['$state', '$rootScope', function ($state, $rootScope) {
         $state.transitionTo('home');
         $rootScope.cronInitData = "* * * * *";
+        $rootScope.baseUrl = "http://127.0.0.1/api/";
     }]);
 
 
