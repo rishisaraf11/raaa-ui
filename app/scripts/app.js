@@ -39,7 +39,7 @@ angular
                 },
                 resolve: {
                     tasks: function ($http) {
-                        return $http.get('http://127.0.0.1/api/task');
+                        return $http.get('/api/task');
                     }
                 }
             })
@@ -71,7 +71,7 @@ angular
                 controller: 'TaskDetailCtrl',
                 resolve: {
                     taskDetail: function ($http, $stateParams) {
-                        return $http.get('http://127.0.0.1/api/task/' + $stateParams.id);
+                        return $http.get('/api/task/' + $stateParams.id);
                     }
                 }
             });
@@ -79,7 +79,7 @@ angular
     .run(['$state', '$rootScope', function ($state, $rootScope) {
         $state.transitionTo('home');
         $rootScope.cronInitData = "* * * * *";
-        $rootScope.baseUrl = "http://127.0.0.1/api/";
+        $rootScope.baseUrl = "/api/";
     }]);
 
 
