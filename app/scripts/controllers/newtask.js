@@ -63,6 +63,7 @@ angular.module('raaa-ui')
             $http.post($rootScope.baseUrl + 'task', $scope.formData).success(function(response, status, headers, config){
                 //process success scenario.
                 console.log("Response: " + response);
+                $state.transitionTo('home');
                 }).error(function(err, status, headers, config){
                 //process error scenario.
                 console.log("Error: " + err);

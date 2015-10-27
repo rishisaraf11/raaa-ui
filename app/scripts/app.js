@@ -28,7 +28,12 @@ angular
             .state('home', {
                 url: "/home",
                 templateUrl: "partials/all-actions.html",
-                controller: 'DashboardCtrl'
+                controller: 'DashboardCtrl',
+                resolve: {
+                    tasks: function ($http) {
+                        return $http.get('http://127.0.0.1/api/task');
+                    }
+                }
             })
             .state('RestForm', {
                 url: "/new/:taskType",

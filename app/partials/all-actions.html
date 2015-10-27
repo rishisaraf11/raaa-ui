@@ -21,16 +21,13 @@
             </div>
         </div>
         <div class="container">
-            <div ng-controller="CardCtrl" class="taskgroup">
+            <div class="taskgroup">
                 <div ng-repeat="task in tasks" ng-class="task.type" class="animated bounceInDown">
-
-
                     <div class="col-md-4">
-
                         <div class="box  "
                              ng-class="{'box-info': task.lastexecution == 'Success', 'box-danger': task.lastexecution == 'Failure', 'box-default': task.lastexecution == ''}">
                             <div class="box-header with-border">
-                                <h3 class="box-title"><a href="" ng-click="setPage(task.type)">{{task.name}}</a>
+                                <h3 class="box-title"><a href="" ng-click="setDetailPage(task.type)">{{task.name}}</a>
                                 </h3>
 
                                 <div class="box-tools pull-right">
@@ -43,7 +40,7 @@
                                         <div class="col-md-6">
                                             <div class="chart-responsive">
                                                 <canvas id="doughnut" class="chart chart-doughnut"
-                                                        chart-data="task.data" chart-labels="labels"
+                                                        chart-data="task.runData" chart-labels="labels"
                                                         chart-colours="colors">
                                                 </canvas>
                                             </div>
@@ -51,17 +48,17 @@
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-md-6">
-                                            <div><strong>Type:</strong> Rest</div>
-                                            <div><strong>Total Run:</strong> 100</div>
-                                            <div><strong>Last Run:</strong></div>
+                                            <div><strong>Type:</strong> {{task.taskType}}</div>
+                                            <div><strong>Total Run:</strong> {{task.totalRun}}</div>
+                                            <div><strong>Last Run:</strong> {{task.lastExecutionTime}}</div>
                                             <!--<ul>-->
                                             <!--<li><strong>Type:</strong> Rest</li>-->
                                             <!--<li><strong>Last Execution:</strong> Rest</li>-->
                                             <!--<li><strong>Type:</strong> Rest</li>-->
                                             <!--</ul>-->
                                             <div style="margin-top: 10px">
-                                                <switch name="onOff" ng-model="task.status" on="on"
-                                                        off="off"></switch>
+                                                <switch name="onOff" ng-model="task.active" on="true"
+                                                        off="false"></switch>
                                             </div>
                                         </div>
                                         <!-- /.col -->

@@ -402,6 +402,16 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+    grunt.registerTask('dev', [
+        'clean:dist',
+        'concurrent:dist',
+        'copy:dist',
+        'cssmin',
+        'ngAnnotate',
+//        'uglify',
+        'htmlmin'
+    ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
