@@ -1,0 +1,69 @@
+<div class="content container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="box-title">{{taskType}} Task</h3>
+        </div>
+
+        <form id="taskForm" name="taskForm" class="ng-pristine ng-invalid ng-invalid-required">
+            <div class="panel-body">
+                <!-- text input -->
+                <div class="form-group" ng-class="{ 'has-error': formData.name.$invalid }">
+                    <label>Name<span class="required">*</span></label>
+                    <input type="text" ng-model="formData.name" class="form-control"
+                           placeholder="Enter Name..." required >
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': formData.host.$invalid }">
+                    <label>Host<span class="required">*</span></label>
+                    <input type="text" ng-model="formData.host" class="form-control"
+                           placeholder="10.11.23.12" required>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': formData.userName.$invalid }">
+                    <label>User Name<span class="required">*</span></label>
+                    <input type="text" ng-model="formData.userName" class="form-control"
+                           placeholder="root" required>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': formData.password.$invalid }">
+                    <label>Password<span class="required">*</span></label>
+                    <input type="password" ng-model="formData.password" class="form-control"
+                           placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <!--<label>Type </label>-->
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default ">
+                            <input type="radio" ng-model="formData.expressionType"
+                                   value="cron">
+                            Interval
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" ng-model="formData.expressionType"
+                                   value="date">
+                            Specific
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="formData.expressionType == 'cron'">
+                    <cron-selection output="formData.expression"
+                                    init="cronInitData"></cron-selection>
+                </div>
+                <div class="form-group" ng-show="formData.expressionType == 'date'">
+                    <datetimepicker class="col-md-4" min-date="minDate" hour-step="hourStep"
+                                    minute-step="minuteStep" ng-model="formData.date"
+                                    show-meridian="false"
+                                    date-format="dd-MMM-yyyy" date-options="dateOptions"
+                                    readonly-date="false"
+                                    show-spinners="true"
+                                    readonly-time="false"></datetimepicker>
+                </div>
+            </div>
+            <div class="panel-footer" style="height: 70px">
+                <div class="pull-right">
+                    <button class="btn btn-info ng-binding" ng-click="submit()">Post</button>
+                    <button class="btn btn-default" type="button" ng-click="cancel()">Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

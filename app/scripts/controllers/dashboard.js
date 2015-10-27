@@ -15,8 +15,8 @@ angular.module('raaa-ui')
             $state.transitionTo(page + 'Form', {taskType: page});
         };
 
-        $scope.setDetailPage = function (page) {
-            $state.transitionTo(page.toLowerCase() + 'Detail', {taskType: page});
+        $scope.setDetailPage = function (page, id) {
+            $state.transitionTo(page.toLowerCase() + 'Detail', {taskType: page, id: id});
         };
 
         $scope.labels = ["Success", "Failure"];

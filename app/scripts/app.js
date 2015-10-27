@@ -21,9 +21,13 @@ angular
         'ncy-angular-breadcrumb',
         'angular-loading-bar'
     ])
-    .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+    .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider, $breadcrumbProvider) {
 
         $urlRouterProvider.otherwise("/home");
+//        $breadcrumbProvider.setOptions({
+//            prefixStateName: 'home',
+//            template: 'bootstrap2'
+//        });
 
         $stateProvider
             .state('home', {
@@ -49,7 +53,7 @@ angular
             })
             .state('CommandForm', {
                 url: "/new/:taskType",
-                templateUrl: "partials/rest-task.html",
+                templateUrl: "partials/command-task.html",
                 controller: 'NewTaskCtrl'
             })
             .state('EmailForm', {
@@ -62,9 +66,14 @@ angular
                 templateUrl: "partials/rest-task.html",
                 controller: 'NewTaskCtrl'
             }).state('restDetail', {
-                url: "/detail/:taskType",
-                templateUrl: "partials/rest-task.html",
-                controller: 'NewTaskCtrl'
+                url: "/detail/:taskType/:id",
+                templateUrl: "partials/rest-task-detail.html",
+                controller: 'TaskDetailCtrl',
+                resolve: {
+                    taskDetail: function ($http, $stateParams) {
+                        return $http.get('http://127.0.0.1/api/task/' + $stateParams.id);
+                    }
+                }
             });
     }])
     .run(['$state', '$rootScope', function ($state, $rootScope) {

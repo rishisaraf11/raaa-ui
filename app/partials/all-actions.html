@@ -19,7 +19,7 @@
                         <div class="box"
                              ng-class="{'box-success': task.lastExecutionStatus == 'EXECUTED', 'box-danger': task.lastExecutionStatus == 'FAILED', 'box-default': task.lastExecutionStatus == 'NOT_SCHEDULED', 'box-default': task.lastExecutionStatus == 'NOT_SCHEDULED'}">
                             <div class="box-header with-border">
-                                <h3 class="box-title"><a href="" ng-click="setDetailPage(task.type)">{{task.name}}</a>
+                                <h3 class="box-title"><a href="" ng-click="setDetailPage(task.taskType, task.id)">{{task.name}}</a>
                                 </h3>
 
                                 <div class="box-tools pull-right">

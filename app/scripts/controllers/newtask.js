@@ -57,7 +57,7 @@ angular.module('raaa-ui')
 
         $scope.cancel = function () {
             $state.transitionTo('home');
-        }
+        };
 
         $scope.submit = function () {
             $http.post($rootScope.baseUrl + 'task', $scope.formData).success(function(response, status, headers, config){
@@ -70,4 +70,13 @@ angular.module('raaa-ui')
             });
 
         }
+    });
+
+angular.module('raaa-ui')
+    .controller('TaskDetailCtrl', function($scope, taskDetail, $state) {
+        $scope.taskDetail = taskDetail.data;
+
+        $scope.cancel = function () {
+            $state.transitionTo('home');
+        };
     });
