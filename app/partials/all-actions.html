@@ -7,7 +7,7 @@
                    dropdown-toggle aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
                 <ul class="dropdown-menu">
                     <!--<li ng-repeat="tasktype in tasktypes"><a ui-sref="newTask({ taskType: tasktype.name })">{{tasktype.name}}</a><li>-->
-                    <li ng-repeat="tasktype in tasktypes"><a ng-click="setPage(tasktype.name)">{{tasktype.name}}</a>
+                    <li ng-repeat="tasktype in tasktypes"><a ng-click="setPage('NewTaskForm', tasktype)">{{tasktype.name}}</a>
                     <li>
                 </ul>
             </div>

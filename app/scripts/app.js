@@ -21,7 +21,7 @@ angular
         'ncy-angular-breadcrumb',
         'angular-loading-bar'
     ])
-    .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider, $breadcrumbProvider) {
+    .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/home");
 //        $breadcrumbProvider.setOptions({
@@ -29,7 +29,7 @@ angular
 //            template: 'bootstrap2'
 //        });
 
-        $stateProvider
+                $stateProvider
             .state('home', {
                 url: "/home",
                 templateUrl: "partials/all-actions.html",
@@ -43,12 +43,12 @@ angular
                     }
                 }
             })
-            .state('RestForm', {
+            .state('NewTaskForm', {
                 url: "/new/:taskType",
-                templateUrl: "partials/rest-task.html",
+                templateUrl: "partials/new-task.html",
                 controller: 'NewTaskCtrl',
                 ncyBreadcrumb: {
-                    label: 'Rest Task'
+                    label: 'New Task'
                 }
             })
             .state('CommandForm', {

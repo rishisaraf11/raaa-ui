@@ -61,7 +61,7 @@ angular.module('raaa-ui')
         };
 
         $scope.submit = function () {
-            if ($scope.taskForm.$valid) {
+//            if ($scope.taskForm.$valid) {
                 $http.post($rootScope.baseUrl + 'task', $scope.formData).success(function (response, status, headers, config) {
                     //process success scenario.
                     console.log("Response: " + response);
@@ -70,7 +70,7 @@ angular.module('raaa-ui')
                     //process error scenario.
                     console.log("Error: " + err);
                 });
-            }
+//            }
 
         }
     });

@@ -11,8 +11,8 @@ angular.module('raaa-ui')
         $scope.tasktypes = [{"name": "Rest"}, {"name": "Command"}, {"name": "Email"}, {"name": "Torrent"}];
         $scope.tasks = tasks.data;
 
-        $scope.setPage = function (page) {
-            $state.transitionTo(page + 'Form', {taskType: page});
+        $scope.setPage = function (page, taskType) {
+            $state.transitionTo(page, {taskType: taskType.name});
         };
 
         $scope.setDetailPage = function (page, id) {
