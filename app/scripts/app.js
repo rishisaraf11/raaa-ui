@@ -55,16 +55,6 @@ angular
                 url: "/new/:taskType",
                 templateUrl: "partials/command-task.html",
                 controller: 'NewTaskCtrl'
-            })
-            .state('EmailForm', {
-                url: "/new/:taskType",
-                templateUrl: "partials/rest-task.html",
-                controller: 'NewTaskCtrl'
-            })
-            .state('TorrentForm', {
-                url: "/new/:taskType",
-                templateUrl: "partials/rest-task.html",
-                controller: 'NewTaskCtrl'
             }).state('restDetail', {
                 url: "/detail/:taskType/:id",
                 templateUrl: "partials/rest-task-detail.html",
