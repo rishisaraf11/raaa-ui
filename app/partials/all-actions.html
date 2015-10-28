@@ -61,7 +61,7 @@
                                             <!--</ul>-->
                                             <div style="margin-top: 10px">
                                                 <switch name="onOff" ng-model="task.active" on="true"
-                                                        off="false"></switch>
+                                                        off="false" ng-change="taskActiveFlag(task.id, task.active)"></switch>
                                             </div>
                                         </div>
                                         <!-- /.col -->

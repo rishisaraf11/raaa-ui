@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('raaa-ui')
-  .controller('DashboardCtrl', function($scope, $state, tasks, stats) {
+  .controller('DashboardCtrl', function($scope, $state, tasks, stats, $http) {
         $scope.tasktypes = [{"name": "Rest"}, {"name": "Command"}, {"name": "Email"}, {"name": "Torrent"}];
         $scope.tasks = tasks.data;
         $scope.stats = stats.data;
@@ -24,4 +24,8 @@ angular.module('raaa-ui')
 
         $scope.labels = ["Success", "Failure"];
         $scope.colors = ['#1EF9A1' , '#FD1F5E'];
+
+        $scope.taskActiveFlag = function (taskId, value) {
+            $http.get('/api/task/activate/' + taskId + "/" + value)
+        };
   });
