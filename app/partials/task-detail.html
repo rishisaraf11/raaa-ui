@@ -51,7 +51,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="execution in taskExecDetail">
-                            <td><span class="label label-success">{{execution.executionStatus}}</span></td>
+                            <td><span class="label " ng-class="{ 'label-success': execution.executionStatus == 'EXECUTED', 'label-danger': execution.executionStatus == 'FAILED' }">{{execution.executionStatus}}</span></td>
                             <td>{{execution.startedDate}}</td>
                             <td>{{execution.completeDate}}</td>
                         </tr>
