@@ -40,6 +40,9 @@ angular
                 resolve: {
                     tasks: function ($http) {
                         return $http.get('/api/task');
+                    },
+                    stats: function ($http) {
+                        return $http.get('/api/task/stats');
                     }
                 }
             })
@@ -50,14 +53,9 @@ angular
                 ncyBreadcrumb: {
                     label: 'New Task'
                 }
-            })
-            .state('CommandForm', {
-                url: "/new/:taskType",
-                templateUrl: "partials/command-task.html",
-                controller: 'NewTaskCtrl'
-            }).state('restDetail', {
+            }).state('TaskDetail', {
                 url: "/detail/:taskType/:id",
-                templateUrl: "partials/rest-task-detail.html",
+                templateUrl: "partials/task-detail.html",
                 controller: 'TaskDetailCtrl',
                 resolve: {
                     taskDetail: function ($http, $stateParams) {

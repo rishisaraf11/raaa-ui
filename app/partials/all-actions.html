@@ -13,12 +13,12 @@
             </div>
             <div class="pull-right col-md-7">
                 <div class="progress-group">
-                    <span class="progress-text">Total 10 tasks/1000 Execution/800 Success/200 Failed</span>
+                    <span class="progress-text">Total {{stats.totalTasks}} tasks/{{stats.totalExecution}} Execution/{{stats.passExecution}} Success/{{stats.failExecution}} Failed</span>
                     <!--<span class="progress-number"><b>160</b>/200</span>-->
 
                     <div class="progress sm">
-                        <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                        <div class="progress-bar progress-bar-danger" style="width: 20%"></div>
+                        <div class="progress-bar progress-bar-green" style="width: {{stats.passPer}}%"></div>
+                        <div class="progress-bar progress-bar-danger" style="width: {{stats.failPer}}%"></div>
                     </div>
                 </div>
             </div>

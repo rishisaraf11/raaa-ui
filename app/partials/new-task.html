@@ -32,8 +32,10 @@
                     </div>
                 </div>
                 <div class="form-group" ng-show="formData.expressionType == 'cron'">
-                    <cron-selection output="formData.expression"
-                                    init="cronInitData"></cron-selection>
+                    <!--<cron-selection output="formData.expression"-->
+                                    <!--init="cronInitData"></cron-selection>-->
+                    <input type="text" ng-model="formData.expression" class="form-control"
+                           placeholder="Cron expression" required >
                 </div>
                 <div class="form-group" ng-show="formData.expressionType == 'date'">
                     <datetimepicker class="col-md-4" min-date="minDate" hour-step="hourStep"

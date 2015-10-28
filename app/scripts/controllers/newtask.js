@@ -77,7 +77,8 @@ angular.module('raaa-ui')
 
 angular.module('raaa-ui')
     .controller('TaskDetailCtrl', function($scope, taskDetail, $state) {
-        $scope.taskDetail = taskDetail.data;
+        $scope.taskDetail = taskDetail.data.task;
+        $scope.taskExecDetail = taskDetail.data.taskExecutions;
 
         $scope.cancel = function () {
             $state.transitionTo('home');

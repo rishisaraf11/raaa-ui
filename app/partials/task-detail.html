@@ -1,0 +1,71 @@
+<div class="container">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-xs-2">Name</label>
+
+            <div class="col-xs-10">
+                <p class="form-control-static">{{taskDetail.name}}</p>
+            </div>
+        </div>
+        <div ng-show="taskDetail.taskType == 'REST'" ng-include src="'/partials/rest-task-detail.html'">Rest</div>
+        <div ng-show="taskDetail.taskType == 'COMMAND'" ng-include src="'/partials/command-task-detail.html'">Command</div>
+
+        <div ng-show="taskDetail.expressionType == 'cron'">
+            <div class="form-group">
+                <label class="control-label col-xs-2">Expression</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static">{{taskDetail.expression}}</p>
+                </div>
+            </div>
+        </div>
+        <div ng-show="taskDetail.expressionType == 'date'">
+            <div class="form-group">
+                <label class="control-label col-xs-2">Date</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static">{{taskDetail.date}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-default pull-right" type="button" ng-click="cancel()">Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+    <div style="margin-top: 10px">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Execution</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin">
+                        <thead>
+                        <tr>
+                            <th>Execution Status</th>
+                            <th>Started At</th>
+                            <th>Completed At</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="execution in taskExecDetail">
+                            <td><span class="label label-success">{{execution.executionStatus}}</span></td>
+                            <td>{{execution.startedDate}}</td>
+                            <td>{{execution.completeDate}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!--&lt;!&ndash; /.box-body &ndash;&gt;-->
+            <!--<div class="box-footer clearfix">-->
+                <!--<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+                <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /.box-footer &ndash;&gt;-->
+        </div>
+    </div>
+</div>
