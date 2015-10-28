@@ -19,6 +19,7 @@ angular
         'ui.bootstrap.datetimepicker',
         'angular-cron-jobs',
         'ncy-angular-breadcrumb',
+        'ngComboBox',
         'angular-loading-bar'
     ])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
@@ -46,6 +47,14 @@ angular
                     }
                 }
             })
+             .state('NewAlert', {
+                 url: "/new/alert",
+                 templateUrl: "partials/create-alert.html",
+                 controller: 'AlertCtrl',
+                 ncyBreadcrumb: {
+                     label: 'New Alert'
+                 }
+             })
             .state('NewTaskForm', {
                 url: "/new/:taskType",
                 templateUrl: "partials/new-task.html",

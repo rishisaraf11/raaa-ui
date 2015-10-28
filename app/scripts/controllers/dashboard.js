@@ -7,9 +7,10 @@
  * Controller of the sbAdminApp
  */
 angular.module('raaa-ui')
-  .controller('DashboardCtrl', function($scope, $state, tasks, stats, $http) {
+  .controller('DashboardCtrl', function($scope, $state, tasks, stats, $http, $rootScope) {
         $scope.tasktypes = [{"name": "Rest"}, {"name": "Command"}, {"name": "Email"}, {"name": "Torrent"}];
         $scope.tasks = tasks.data;
+        $rootScope.tasks = tasks.data;
         $scope.stats = stats.data;
         $scope.stats.passPer = ($scope.stats.passExecution/$scope.stats.totalExecution)*100;
         $scope.stats.failPer = ($scope.stats.failExecution/$scope.stats.totalExecution)*100;
