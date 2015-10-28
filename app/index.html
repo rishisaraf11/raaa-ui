@@ -104,28 +104,23 @@
                     <li class="dropdown notifications-menu" dropdown>
                         <a href="#" class="dropdown-toggle" aria-expanded="false" dropdown-toggle>
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-danger">3</span>
+                            <span class="label label-danger">{{alertSize}}</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 3 notifications</li>
+                            <li class="header">You have {{alertSize}} notifications</li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
-                                    <li>
+                                    <li ng-repeat="alert in alerts">
                                         <a href="#">
-                                            <i class="fa fa-times text-red"></i> Rest action failed
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Command action
-                                            taking more time
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-check text-green"></i> Rest action
-                                            passed
+                                            <span ng-show="alert.executionStatus == 'FAILED'">
+                                                <i class="fa fa-times text-red">
+                                                </i> {{alert.taskName}} task failed
+                                            </span>
+                                             <span ng-show="alert.executionStatus == 'EXECUTED'">
+                                                <i class="fa fa-check text-green">
+                                                </i> {{alert.taskName}} task Passed
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>

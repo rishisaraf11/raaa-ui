@@ -44,6 +44,9 @@ angular
                     },
                     stats: function ($http) {
                         return $http.get('/api/task/stats');
+                    },
+                    alerts: function ($http) {
+                        return $http.get('/api/alert');
                     }
                 }
             })
