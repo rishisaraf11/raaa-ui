@@ -11,6 +11,8 @@ angular.module('raaa-ui')
         $scope.tasks = $rootScope.tasks;
         $scope.fieldNames = [{name: 'executionStatus', display: 'Execution Status'}];
         $scope.fieldValues = [{name: 'EXECUTED'}, {name: 'FAILED'}];
+        $scope.actions = [{name: 'Email'}];
+        $scope.action = {name: ''};
 
         $scope.options = [
             //List of predefined options

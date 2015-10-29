@@ -47,6 +47,7 @@
                             <th>Execution Status</th>
                             <th>Started At</th>
                             <th>Completed At</th>
+                            <th>Response</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -54,6 +55,7 @@
                             <td><span class="label " ng-class="{ 'label-success': execution.executionStatus == 'EXECUTED', 'label-danger': execution.executionStatus == 'FAILED' }">{{execution.executionStatus}}</span></td>
                             <td>{{execution.startedDate}}</td>
                             <td>{{execution.completeDate}}</td>
+                            <td>{{execution.output}}</td>
                         </tr>
                         </tbody>
                     </table>

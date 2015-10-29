@@ -1,7 +1,7 @@
 <div class="content container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="box-title">New Alert Rule</h3>
+            <h3 class="box-title">New Sensor Rule</h3>
         </div>
         <form id="taskForm" name="taskForm" class="ng-pristine ng-invalid ng-invalid-required">
             <div class="panel-body">
@@ -13,34 +13,43 @@
                             ng-model="task">
                     </select>
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                     <label>Field Name</label>
                     <select
                             ng-options="fieldName as fieldName.display for fieldName in fieldNames track by fieldName.name"
                             ng-model="fieldName">
                     </select>
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                     <label>Field Value</label>
                     <select
                             ng-options="fieldValue as fieldValue.name for fieldValue in fieldValues track by fieldValue.name"
                             ng-model="fieldValue">
                     </select>
                 </div>
-                <div class="form-group" >
-                    <label>Email</label>
-                    <input type="text" ng-model="email" class="form-control"
-                           placeholder="Enter Email..." required >
+                <div class="form-group">
+                    <label> Action </label>
+                    <select
+                            ng-options="action as action.name for action in actions track by action.name"
+                            ng-model="action">
+                    </select>
                 </div>
-                <div class="form-group" >
-                    <label>Subject</label>
-                    <input type="text" ng-model="subject" class="form-control"
-                           placeholder="Enter Email Subject..." required >
-                </div>
-                <div class="form-group" >
-                    <label>Message</label>
-                    <textarea class="form-control" ng-model="message" rows="3"
-                              placeholder="Enter Email Message..."></textarea>
+                <div ng-show="action.name == 'Email'">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" ng-model="email" class="form-control"
+                               placeholder="Enter Email..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" ng-model="subject" class="form-control"
+                               placeholder="Enter Email Subject..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" ng-model="message" rows="3"
+                                  placeholder="Enter Email Message..."></textarea>
+                    </div>
                 </div>
             </div>
             <div class="panel-footer" style="height: 70px">

@@ -358,3 +358,10 @@ table.dataTable thead .sorting:after {
     font-size: 12px;
     padding-left: 2px;
 }
+
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}

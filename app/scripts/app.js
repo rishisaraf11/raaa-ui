@@ -52,7 +52,7 @@ angular
                 }
             })
              .state('NewAlert', {
-                 url: "/new/alert",
+                 url: "/new/sensor",
                  templateUrl: "partials/create-alert.html",
                  controller: 'AlertCtrl',
                  ncyBreadcrumb: {
