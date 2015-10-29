@@ -1,7 +1,7 @@
 <div>
     <section class="content">
         <div class="row " style="margin-bottom: 60px; margin-left: 10px; margin-top: 10px">
-            <div class="btn-group dropdown col-md-5 pull-left" dropdown>
+            <div class="btn-group dropdown col-md-3 pull-left" dropdown>
                 <button type="button" class="btn btn-warning btn-flat">Create New Task</button>
                 <a href="" type="button" class="btn btn-warning btn-flat dropdown-toggle"
                    dropdown-toggle aria-expanded="false"> <span class="fa fa-caret-down"></span></a>
@@ -11,7 +11,12 @@
                     <li>
                 </ul>
             </div>
-            <div class="pull-right col-md-7">
+            <div class="btn-group col-md-2" data-toggle-name="radius_options"
+                 data-toggle="buttons-radio">
+                <button type="button" value="detail" data-toggle="button" class="btn btn-default" ng-click="switchView('detail')">Detail</button>
+                <button type="button" value="calendar" data-toggle="button" class="btn btn-default" ng-click="switchView('calendar')">Calendar</button>
+            </div>
+            <div class="pull-right col-md-6">
                 <div class="progress-group">
                     <span class="progress-text">Total {{stats.totalTasks}} tasks/{{stats.totalExecution}} Execution/{{stats.passExecution}} Success/{{stats.failExecution}} Failed</span>
                     <!--<span class="progress-number"><b>160</b>/200</span>-->
@@ -23,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" ng-show="view == 'detail'">
             <div class="taskgroup">
                 <div ng-repeat="task in tasks" ng-class="task.type" class="animated bounceInDown">
                     <div class="col-md-4">
@@ -54,6 +59,7 @@
                                             <div><strong>Type:</strong> {{task.taskType}}</div>
                                             <div><strong>Total Run:</strong> {{task.totalRun}}</div>
                                             <div><strong>Last Run:</strong> {{task.lastExecutionTime}}</div>
+                                            <div ng-show="task.nextRun.length > 0"><strong>Next Run:</strong> {{task.nextRun}}</div>
                                             <!--<ul>-->
                                             <!--<li><strong>Type:</strong> Rest</li>-->
                                             <!--<li><strong>Last Execution:</strong> Rest</li>-->
@@ -76,6 +82,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="container" ng-show="view == 'calendar'">
+            <div ui-calendar ng-model="eventSources"></div>
+        </div>
+
     </section>
 
 </div>

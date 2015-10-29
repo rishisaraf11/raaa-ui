@@ -20,6 +20,7 @@ angular
         'angular-cron-jobs',
         'ncy-angular-breadcrumb',
         'ngComboBox',
+        'ui.calendar',
         'angular-loading-bar'
     ])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
