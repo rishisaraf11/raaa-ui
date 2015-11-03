@@ -58,8 +58,8 @@
                                         <div class="col-md-6">
                                             <div><strong>Type:</strong> {{task.taskType}}</div>
                                             <div><strong>Total Run:</strong> {{task.totalRun}}</div>
-                                            <div><strong>Last Run:</strong> {{task.lastExecutionTime}}</div>
-                                            <div ng-show="task.nextRun.length > 0"><strong>Next Run:</strong> {{task.nextRun}}</div>
+                                            <div  class=" truncate t100" ><strong>Last Run:</strong> {{task.lastExecutionTime}}</div>
+                                            <div class=" truncate t100" ng-show="task.nextRun.length > 0"><strong>Next Run:</strong> {{task.nextRun}}</div>
                                             <!--<ul>-->
                                             <!--<li><strong>Type:</strong> Rest</li>-->
                                             <!--<li><strong>Last Execution:</strong> Rest</li>-->

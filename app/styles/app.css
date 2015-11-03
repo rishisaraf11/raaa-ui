@@ -365,3 +365,17 @@ table.dataTable thead .sorting:after {
     text-overflow: ellipsis;
 
 }
+
+.truncate{
+    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.truncate.t100{
+    width:150px;
+}
+.truncate.t50{
+    width:50px;
+}
